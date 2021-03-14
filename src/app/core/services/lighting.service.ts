@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { environment } from '../../../environments/environment';
 import { LightScene } from '../models/lighting/light-scene';
 
 @Injectable({
@@ -10,9 +9,11 @@ import { LightScene } from '../models/lighting/light-scene';
 })
 export class LightingService {
 
-  private apiUrl = environment.apiUrl + 'lighting/';
-
-  constructor(private http: HttpClient) { }
+  constructor(
+    @Inject('API_URL') private apiUrl: string,
+    private http: HttpClient) {
+    this.apiUrl += 'lighting/';
+  }
 
   public getLightScenes(): Observable<LightScene[]> {
     const url = this.apiUrl + 'scenes';
