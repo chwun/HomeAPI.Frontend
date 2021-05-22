@@ -1,0 +1,16 @@
+<nav mat-tab-nav-bar>
+  <a mat-tab-link routerLink="overview" routerLinkActive #rlaOverview="routerLinkActive"
+    [active]="rlaOverview.isActive">
+    Übersicht
+  </a>
+  <a mat-tab-link routerLink="scenes" routerLinkActive #rlaScenes="routerLinkActive" [active]="rlaScenes.isActive">
+    Szenen
+  </a>
+  <a mat-tab-link routerLink="lights" routerLinkActive #rlaLights="routerLinkActive" [active]="rlaLights.isActive">
+    Lampen
+  </a>
+</nav>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
