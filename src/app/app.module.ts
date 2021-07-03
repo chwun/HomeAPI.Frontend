@@ -8,6 +8,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { HomeModule } from './modules/home/home.module';
 import { LightingModule } from './modules/lighting/lighting.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MeasurementsModule } from './modules/measurements/measurements.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutModule,
     HttpClientModule,
     HomeModule,
-    LightingModule
+    LightingModule,
+    MeasurementsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
