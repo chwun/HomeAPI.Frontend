@@ -1,11 +1,18 @@
-<mat-card *ngFor="let lightScene of lightScenes" class="lightSceneCard">
-  <mat-card-header>
-    <mat-card-title>{{ lightScene.id }}: {{ lightScene.name }}</mat-card-title>
-    <mat-card-subtitle>Beschreibung</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions>
-    <button mat-button (click)="loadLightScene(lightScene.id)">Laden</button>
-    <button mat-button>Editieren</button>
-    <button mat-button>Löschen</button>
-  </mat-card-actions>
-</mat-card>
+<mat-accordion multi>
+
+  <mat-expansion-panel *ngFor="let lightScene of lightScenes">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ lightScene.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Beschreibung
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <button mat-raised-button (click)="loadLightScene(lightScene.id)" color="accent">Laden</button>
+    <button mat-raised-button color="primary">Editieren</button>
+    <button mat-raised-button color="primary">Löschen</button>
+  </mat-expansion-panel>
+
+</mat-accordion>

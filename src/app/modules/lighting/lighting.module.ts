@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LightingRoutingModule } from './lighting-routing.module';
 import { LightingOverviewComponent } from './components/lighting-overview/lighting-overview.component';
 import { LightingScenesComponent } from './components/lighting-scenes/lighting-scenes.component';
@@ -23,7 +24,8 @@ import { LightingLightsComponent } from './components/lighting-lights/lighting-l
     MatCardModule,
     MatButtonModule,
     MatTabsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
   ]
 })
 export class LightingModule { }

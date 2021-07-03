@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LightScene } from 'src/app/core/models/lighting/light-scene';
 import { LightingService } from 'src/app/core/services/lighting.service';
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-lighting-scenes',
@@ -11,7 +12,9 @@ export class LightingScenesComponent implements OnInit {
 
   lightScenes: LightScene[];
 
-  constructor(private lighting: LightingService) { }
+  constructor(
+    private lighting: LightingService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getLightScenes();
@@ -26,7 +29,12 @@ export class LightingScenesComponent implements OnInit {
 
   loadLightScene(sceneId: number) {
     this.lighting.applyLightScene(sceneId).subscribe(
-      result => { },
+      result => {
+        const scene = this.lightScenes.find(x => x.id === sceneId);
+        const sceneName = scene?.name ?? sceneId;
+
+        this.snackBar.open(`Lichtszene "${sceneName}" geladen`, 'Ok', { duration: 2000 });
+      },
       error => console.log(error)
     );
   }
