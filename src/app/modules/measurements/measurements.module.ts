@@ -6,6 +6,7 @@ import { MeasurementsOverviewComponent } from './components/measurements-overvie
 import { MeasurementsTemperaturesComponent } from './components/measurements-temperatures/measurements-temperatures.component';
 import { MeasurementsHomeComponent } from './components/measurements-home/measurements-home.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MatTabsModule } from '@angular/material/tabs';
   imports: [
     CommonModule,
     MeasurementsRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    NgxChartsModule
   ]
 })
 export class MeasurementsModule { }
