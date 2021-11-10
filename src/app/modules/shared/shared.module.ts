@@ -14,9 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
-  declarations: [
-    NavComponent
-  ],
+  declarations: [NavComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -42,4 +40,4 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NgxChartsModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {}

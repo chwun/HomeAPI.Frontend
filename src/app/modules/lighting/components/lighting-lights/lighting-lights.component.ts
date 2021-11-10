@@ -8,10 +8,9 @@ import { LightingService } from 'src/app/core/services/lighting.service';
   styleUrls: ['./lighting-lights.component.css']
 })
 export class LightingLightsComponent implements OnInit {
-
   lights: Light[];
 
-  constructor(private lighting: LightingService) { }
+  constructor(private lighting: LightingService) {}
 
   ngOnInit(): void {
     this.getLights();
@@ -19,9 +18,8 @@ export class LightingLightsComponent implements OnInit {
 
   getLights() {
     this.lighting.getLights().subscribe(
-      result => this.lights = result,
-      error => console.log(error)
+      (result) => (this.lights = result),
+      (error) => console.log(error)
     );
   }
-
 }

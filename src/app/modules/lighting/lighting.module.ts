@@ -13,9 +13,6 @@ import { SharedModule } from '../shared/shared.module';
     LightingScenesComponent,
     LightingLightsComponent
   ],
-  imports: [
-    SharedModule,
-    LightingRoutingModule
-  ]
+  imports: [SharedModule, LightingRoutingModule]
 })
-export class LightingModule { }
+export class LightingModule {}

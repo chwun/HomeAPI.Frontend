@@ -8,10 +8,7 @@ import { LightingService } from 'src/app/core/services/lighting.service';
   styleUrls: ['./lighting-overview.component.css']
 })
 export class LightingOverviewComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

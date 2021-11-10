@@ -9,14 +9,18 @@ import { TimeSeriesResult } from '../models/timeseries/time-series-result';
   providedIn: 'root'
 })
 export class TimeSeriesService {
-
   constructor(
     @Inject('API_URL') private apiUrl: string,
-    private http: HttpClient) {
+    private http: HttpClient
+  ) {
     this.apiUrl += 'timeseries/';
   }
 
-  getTimeSeries(measurementName: string, location: string, range: TimeSeriesRange): Observable<TimeSeriesResult> {
+  getTimeSeries(
+    measurementName: string,
+    location: string,
+    range: TimeSeriesRange
+  ): Observable<TimeSeriesResult> {
     const params = new HttpParams()
       .set('measurementName', measurementName)
       .set('location', location)
@@ -26,9 +30,10 @@ export class TimeSeriesService {
     return this.http.get<TimeSeriesResult>(url, { params });
   }
 
-  getPreconfiguredTimeSeries(range: TimeSeriesRange): Observable<TimeSeriesResult[]> {
-    const params = new HttpParams()
-      .set('range', range);
+  getPreconfiguredTimeSeries(
+    range: TimeSeriesRange
+  ): Observable<TimeSeriesResult[]> {
+    const params = new HttpParams().set('range', range);
 
     const url = this.apiUrl + 'preconfigured';
     return this.http.get<TimeSeriesResult[]>(url, { params });

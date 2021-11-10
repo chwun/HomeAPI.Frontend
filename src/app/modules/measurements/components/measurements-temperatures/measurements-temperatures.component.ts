@@ -11,7 +11,6 @@ import { TimeSeriesService } from 'src/app/core/services/time-series.service';
   styleUrls: ['./measurements-temperatures.component.css']
 })
 export class MeasurementsTemperaturesComponent implements OnInit {
-
   chartSeriesSets: ChartSeriesSet[];
 
   view = [1000, 400];
@@ -23,13 +22,15 @@ export class MeasurementsTemperaturesComponent implements OnInit {
     domain: ['#5AA454', '#E44D25']
   };
 
-  constructor(private timeSeries: TimeSeriesService) { }
+  constructor(private timeSeries: TimeSeriesService) {}
 
   ngOnInit(): void {
-    this.timeSeries.getPreconfiguredTimeSeries(TimeSeriesRange.oneMonth).subscribe(
-      result => this.setMultiSeries(result),
-      error => console.log(error)
-    );
+    this.timeSeries
+      .getPreconfiguredTimeSeries(TimeSeriesRange.oneMonth)
+      .subscribe(
+        (result) => this.setMultiSeries(result),
+        (error) => console.log(error)
+      );
   }
 
   setMultiSeries(timeSeries: TimeSeriesResult[]) {
@@ -54,7 +55,12 @@ export class MeasurementsTemperaturesComponent implements OnInit {
 
   dateTickFormatting(val: any): string {
     if (val instanceof Date) {
-      return (val as Date).toLocaleString('de-DE', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+      return (val as Date).toLocaleString('de-DE', {
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
     }
   }
 }

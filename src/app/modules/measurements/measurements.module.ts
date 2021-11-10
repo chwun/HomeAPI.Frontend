@@ -12,9 +12,6 @@ import { SharedModule } from '../shared/shared.module';
     MeasurementsTemperaturesComponent,
     MeasurementsComponent
   ],
-  imports: [
-    SharedModule,
-    MeasurementsRoutingModule
-  ]
+  imports: [SharedModule, MeasurementsRoutingModule]
 })
-export class MeasurementsModule { }
+export class MeasurementsModule {}

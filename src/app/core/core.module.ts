@@ -3,8 +3,6 @@ import { SharedModule } from '../modules/shared/shared.module';
 
 @NgModule({
   declarations: [],
-  imports: [
-    SharedModule
-  ]
+  imports: [SharedModule]
 })
-export class CoreModule { }
+export class CoreModule {}

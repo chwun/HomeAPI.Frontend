@@ -1,4 +1,4 @@
-export enum LightType{
+export enum LightType {
   none,
   hueDimmableLight,
   hueExtendedColorLight,

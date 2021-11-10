@@ -9,14 +9,14 @@ import { LightScene } from '../models/lighting/light-scene';
   providedIn: 'root'
 })
 export class LightingService {
-
   constructor(
     @Inject('API_URL') private apiUrl: string,
-    private http: HttpClient) {
+    private http: HttpClient
+  ) {
     this.apiUrl += 'lighting/';
   }
 
-  getLights(): Observable<Light[]>{
+  getLights(): Observable<Light[]> {
     const url = this.apiUrl + 'lights';
     return this.http.get<Light[]>(url);
   }
@@ -30,5 +30,4 @@ export class LightingService {
     const url = this.apiUrl + `scenes/${id}/active`;
     return this.http.get(url);
   }
-
 }
