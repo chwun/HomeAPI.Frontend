@@ -1,29 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 import { HomeRoutingModule } from './home-routing.module';
-import { NavComponent } from './components/nav/nav.component';
-import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
+import { HomeComponent } from './home.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    HomeDashboardComponent,
-    NavComponent],
+    HomeComponent
+  ],
   imports: [
-    CommonModule,
-    HomeRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    SharedModule,
+    HomeRoutingModule
   ],
   exports: [
-    NavComponent
   ]
 })
 export class HomeModule { }
