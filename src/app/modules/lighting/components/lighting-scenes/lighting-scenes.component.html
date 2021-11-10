@@ -1,18 +1,20 @@
 <mat-accordion multi>
-
   <mat-expansion-panel *ngFor="let lightScene of lightScenes">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{ lightScene.name }}
       </mat-panel-title>
-      <mat-panel-description>
-        Beschreibung
-      </mat-panel-description>
+      <mat-panel-description> Beschreibung </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <button mat-raised-button (click)="loadLightScene(lightScene.id)" color="accent">Laden</button>
+    <button
+      mat-raised-button
+      (click)="loadLightScene(lightScene.id)"
+      color="accent"
+    >
+      Laden
+    </button>
     <button mat-raised-button color="primary">Editieren</button>
     <button mat-raised-button color="primary">Löschen</button>
   </mat-expansion-panel>
-
 </mat-accordion>

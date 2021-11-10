@@ -1,10 +1,20 @@
 <nav mat-tab-nav-bar>
-  <a mat-tab-link routerLink="overview" routerLinkActive #rlaOverview="routerLinkActive"
-    [active]="rlaOverview.isActive">
+  <a
+    mat-tab-link
+    routerLink="overview"
+    routerLinkActive
+    #rlaOverview="routerLinkActive"
+    [active]="rlaOverview.isActive"
+  >
     Übersicht
   </a>
-  <a mat-tab-link routerLink="temperatures" routerLinkActive #rlaTemperatures="routerLinkActive"
-    [active]="rlaTemperatures.isActive">
+  <a
+    mat-tab-link
+    routerLink="temperatures"
+    routerLinkActive
+    #rlaTemperatures="routerLinkActive"
+    [active]="rlaTemperatures.isActive"
+  >
     Temperaturen
   </a>
 </nav>
